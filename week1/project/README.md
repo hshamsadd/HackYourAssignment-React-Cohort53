@@ -1,27 +1,12 @@
-# Ecommerce Project I
+# React + Vite
 
-## 1. Setup
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-The first step to any project is to setup your development environment. Follow the steps:
+Currently, two official plugins are available:
 
-1. Inside this folder (`week1/project`), use `npm create vite` to create a React application. Give it the name `ecommerce`
-   > You are going to be copying and refactoring your code every week but will simultaneously be getting feedback for previous weeks. As such, at the beginning of every week you copy over the project files from the previous week into a new folder and a new branch. To help you identify if all is well, we suggest keeping it in the week folder that it is a part of.
-2. Copy and paste the folder `fake-data` inside the `src` folder of your new project
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 2. Requirements
+## Expanding the ESLint configuration
 
-This week you'll build the foundation of your application. It should eventually look like this:
-
-[![Week 1 Wireframe](../../assets/project/week1.png)](https://hyf-react-w1-example.netlify.app)
-
-There is a live version [here](https://hyf-react-w1-example.netlify.app)
-
-We will be using the information in the `fake-data` folder as an example of what we get back from the API. The actual connection to the API will be done next week.
-
-What you need to have done at the end of the week:
-
-- A product list that displays all of the products in the `all-products` file. _Note: the site is responsive, so have a look at the breakpoints in the deployed example project._
-- A category list that displays all of the categories in the `all-categories` file at the top of the page
-- If the user clicks on a category only the products that have that category in their `category` property should be displayed on the screen. _Note: The categories listed in the product objects do *not* match up exactly with the categories in the categories list. You will have to find a solution to this *without* editing the files_
-- There should only be 1 category active at a time and the user should see which category is selected.
-- You need to deploy your app somewhere (using something like [netlify](https://www.netlify.com)) and put the link in your PR!
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
