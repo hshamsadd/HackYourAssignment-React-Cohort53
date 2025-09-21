@@ -1,18 +1,32 @@
+import { useState } from "react";
 import "./App.css";
 import data from "./fake-data/all-categories.js";
-import CategoryRenderer from "./CategoryRenderer.jsx";
+import allProducts from "./fake-data/all-products.js";
+import Category from "./Category.jsx";
+import Product from "./Product.jsx";
+import { filterProductsByCategory } from "./productUtils.js";
+
 function App() {
-  //const [count, setCount] = useState(0)
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  function handleCategoryClick(category) {
+    setSelectedCategory(category);
+  }
+
+  const filteredProducts = filterProductsByCategory(
+    allProducts,
+    selectedCategory
+  );
 
   return (
     <>
       <h1>Products</h1>
-      <>
-        {/* <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button> */}
-        <CategoryRenderer items={data} />
-      </>
+      <Category
+        items={data}
+        activeCategory={selectedCategory}
+        onItemClick={handleCategoryClick}
+      />
+      <Product items={filteredProducts} />
     </>
   );
 }
