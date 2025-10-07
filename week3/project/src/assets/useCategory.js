@@ -17,7 +17,7 @@ export default function useCategory(activeCategory) {
       .catch((err) => setError(err.message));
   }, []);
 
-  // fetch products whenever activeCategory changes
+  // fetch products whenever activeCategory changes or on initial load
   useEffect(() => {
     setLoading(true);
     const url = activeCategory

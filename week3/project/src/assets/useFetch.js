@@ -8,8 +8,9 @@ export default function useFetch(url) {
     setLoading(true);
     fetch(url)
       .then((res) => res.json())
-      .then((json) => setData(json))
+      .then((data) => setData(data))
       .finally(() => setLoading(false));
+    //url is the dependency here because if the url changes we want to refetch the data
   }, [url]);
 
   return { data, loading };

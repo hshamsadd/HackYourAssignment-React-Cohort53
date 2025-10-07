@@ -12,9 +12,10 @@ export default function CategoryBar() {
     "https://fakestoreapi.com/products/categories"
   );
 
-  const categories = Array.isArray(categoriesData) ? categoriesData : [];
-
-  const items = useMemo(() => ["All", ...categories], [categories]);
+  const items = useMemo(() => {
+    const categories = Array.isArray(categoriesData) ? categoriesData : [];
+    return ["All", ...categories];
+  }, [categoriesData]);
 
   const onSelect = (cat) => {
     const isAll = cat === "All";
